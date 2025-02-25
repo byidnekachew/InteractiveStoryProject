@@ -16,5 +16,7 @@ E-->I(Hang out with the alien but his boss -Mr. Gardner- forces you to kill your
 E-->X(You abandon your alien friend and find your human friend in aisle 2. You decide to hang out there until the aliens leave)
 I-->J(You are forced to kill your alien friend. Congrats, you are Alien King. What did it cost you?)
 
+X-->O(If you steal stuff from the store, the aliens kill you)
+X-->Y(If you leave cash for what you eat and the aliens spare you. They've been watching all along)
 
 ```
