@@ -98,17 +98,23 @@ const btnOpts = [["Explore? No thanks! I'll stay safe at home.", "Staying at hom
     ]
 ]
 
+
+
 function code(txtLst, imgLst, optLst, opt){
     document.getElementById("content").textContent = txtLst[0]
     document.getElementById("pic").src = imgLst[0]
     document.getElementById("btn1").textContent = optLst[opt][0]
     document.getElementById("btn2").textContent = optLst[opt][1]
     
-    document.getElementById("btn1").addEventListener("click", function(){
+    document.getElementById("btn1").addEventListener("click", function myClick1(){
         code(txtLst[1][0], imgLst[1][0],optLst[1][0], 0)
+        document.getElementById("btn1").removeEventListener("click", myClick1)
+        document.getElementById("btn2").removeEventListener("click", myClick2)
     })
-    document.getElementById("btn2").addEventListener("click", function(){
+    document.getElementById("btn2").addEventListener("click", function myClick2(){
         code(txtLst[1][1], imgLst[1][1],optLst[1][0], 1)
+        document.getElementById("btn1").removeEventListener("click", myClick1)
+        document.getElementById("btn2").removeEventListener("click", myClick2)
     })
 }
 
@@ -116,9 +122,13 @@ document.getElementById("content").textContent = contentTxt[0]
 document.getElementById("pic").src = contentImg[0]
 document.getElementById("btn1").textContent = btnOpts[0][0]
 document.getElementById("btn2").textContent = btnOpts[0][1]
-document.getElementById("btn1").addEventListener("click", function(){
+document.getElementById("btn1").addEventListener("click", function myClick1A(){
     code(contentTxt[1][0], contentImg[1][0], btnOpts[1][0], 0)
+    document.getElementById("btn1").removeEventListener("click", myClick1A)
+    document.getElementById("btn2").removeEventListener("click", myClick2A)
 })
-document.getElementById("btn2").addEventListener("click", function(){
+document.getElementById("btn2").addEventListener("click", function myClick2A(){
     code(contentTxt[1][1], contentImg[1][1], btnOpts[1][1], 1)
+    document.getElementById("btn1").removeEventListener("click", myClick1A)
+    document.getElementById("btn2").removeEventListener("click", myClick2A)
 })
