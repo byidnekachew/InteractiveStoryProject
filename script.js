@@ -79,7 +79,7 @@ const btnOpts = [["Explore? No thanks! I'll stay safe at home.", "Staying at hom
             ]
         ], 
     
-        [["I need to look for my friends at the 7-11, that's where they'll probably be!"], 
+        [["I need to look for my friends at the 7-11, that's where they'll probably be!", null], 
             [
                 [["I'll stick with my alien friend!", "I politely decline; I need to find my old friends."],
                     [
@@ -98,14 +98,12 @@ const btnOpts = [["Explore? No thanks! I'll stay safe at home.", "Staying at hom
     ]
 ]
 
-
-
 function code(txtLst, imgLst, optLst, opt){
     document.getElementById("content").textContent = txtLst[0]
     document.getElementById("pic").src = imgLst[0]
     document.getElementById("btn1").textContent = optLst[opt][0]
     document.getElementById("btn2").textContent = optLst[opt][1]
-    
+
     document.getElementById("btn1").addEventListener("click", function myClick1(){
         code(txtLst[1][0], imgLst[1][0],optLst[1][0], 0)
         document.getElementById("btn1").removeEventListener("click", myClick1)
