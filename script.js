@@ -112,4 +112,13 @@ function code(txtLst, imgLst, optLst, opt){
     })
 }
 
-code(contentTxt, contentImg, btnOpts, 0)
+document.getElementById("content").textContent = contentTxt[0]
+document.getElementById("pic").src = contentImg[0]
+document.getElementById("btn1").textContent = btnOpts[0][0]
+document.getElementById("btn2").textContent = btnOpts[0][1]
+document.getElementById("btn1").addEventListener("click", function(){
+    code(contentTxt[1][0], contentImg[1][0], btnOpts[1][0], 0)
+})
+document.getElementById("btn2").addEventListener("click", function(){
+    code(contentTxt[1][1], contentImg[1][1], btnOpts[1][1], 1)
+})
